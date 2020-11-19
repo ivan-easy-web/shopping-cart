@@ -1,0 +1,155 @@
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+@keyframes gradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+.welcomePage {
+    width: 100vw;
+    height: 100vh;
+
+    background: linear-gradient(-45deg, #c0b3af, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.welcomePage .centeredBlock {
+    color: rgba(236, 236, 236, 0.904);
+    text-align: center;
+}
+
+.myButton {
+    padding: 2px 10px;
+    background: -webkit-linear-gradient( rgb(111, 180, 247), rgb(27, 130, 251));
+    color: white;
+    border-radius: 10px;
+    transition: ease-out 0.1s;
+    width: fit-content;
+}
+
+.myButton:hover {
+    cursor: pointer;
+    background: white;
+    transition: ease-in 0.1s;
+    color: black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.menubar {
+    position: sticky;
+    top: 5px;
+    height: 30px;
+    margin: 10px 20px;
+    background-color: rgba(139, 138, 138, 0.466);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
+    padding: 5px 10px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.menubar-search input {
+    height: 25px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    display: none;
+}
+
+
+.menubar-logo {
+    background: white;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
+    align-self: center;
+    text-align: center;
+    line-height: 40px;
+    transition: 0.2s ease-out;
+}
+
+.menubar-logo svg {
+    display: block;
+    margin: 8px auto;
+}
+.menubar-logo:hover {
+    transform: scale(1.2) rotate(360deg);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    background: linear-gradient(-45deg, #c0b3af, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    color: white;
+    
+}
+
+.menubar-home {
+    margin: 0;
+}
+
+.menubar-home:hover {
+    background: white;
+}
+
+.card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.cart {
+    position: sticky;
+    top: 50px;
+    border-left: 1px inset;
+    padding: 10px 20px;
+    padding-right: 0;
+}
+
+.cartElement {
+    list-style: none;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.055);
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.positionName {
+
+}
+
+.positionSize {
+    color: rgb(20, 93, 252);
+}
+
+.positionNumber {
+    color: rgb(252, 20, 20);
+}
+
+.positionCoast {
+    color: rgb(240, 164, 0);
+}
+
+.cartElement div:hover {
+    cursor: pointer;
+    text-decoration: underline;
+
+}
