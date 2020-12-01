@@ -14,3 +14,7 @@ $('body').on('click', '.modalBackground', function(event) {
     event.stopPropagation();
     $(this).removeClass('modalBackground').children().removeClass('modalCard');
 })
+
+if (window.orientation !== undefined) {
+    $('.grid').css('width','290px');
+  }
