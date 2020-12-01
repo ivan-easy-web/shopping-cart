@@ -87,96 +87,6 @@ Start Page
 
 /*
 ------------------------------------------------------------------------------------------------------------------------------------------------
-Menubar
-
-------------------------------------------------------------------------------------------------------------------------------------------------
-*/
-
-
-.menubar {
-    position: sticky;
-    top: 5px;
-    height: 20px;
-    margin: 10px 20px;
-    background-color: rgba(139, 138, 138, 0.466);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
-    padding: 5px 10px;
-    border-radius: 20px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-around;
-    z-index: 1000;
-}
-
-
-.menubar-search input {
-    background: none;
-    outline: none;
-    border: none;
-    border-bottom: 1px black solid;
-    font-size: 1rem;
-}
-
-.submenubar {
-    position: absolute;
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-}
-
-.submenubar .section {
-    display: flex;
-    justify-content: space-around;
-}
-
-.submenubar .button {
-    margin: 0 40px;
-    color: rgb(98, 136, 216);
-    line-height: 40px;
-    font-size: 1.1rem;
-}
-
-.submenubar .button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.home-button {
-    position: sticky;
-    top: 0;
-    margin: auto;
-    margin-bottom: 10px;
-    z-index: 1001;
-    background: white;
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
-    border: 1px solid rgb(214, 214, 214);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
-    text-align: center;
-    line-height: 40px;
-    transition: 0.2s ease-out;
-}
-
-.home-button svg {
-    display: block;
-    margin: 8px auto;
-}
-.home-button:hover {
-    transform: scale(1.2) rotate(360deg);
-    transition: 0.2s ease-in;
-    cursor: pointer;
-    background: linear-gradient(-45deg, #c0b3af, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 200% 200%;
-    animation: gradient 15s ease infinite;
-    color: white;
-    
-}
-
-
-/*
-------------------------------------------------------------------------------------------------------------------------------------------------
 Shoppting Page
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
@@ -209,25 +119,28 @@ Grid
     .grid {
         width: 910px;
     }
+}
 
-    .cart-svg {
-        display: none;
+@media all and (min-width: 886px) and (max-width: 1299px) {
+    .grid {
+        width: 600px;
     }
 }
 
-@media all and (min-width: 1000px) and (max-width: 1299px) {
+@media all and (min-width: 701px) and (max-width: 885px) {
     .grid {
         width: 600px;
     }
 
-    .cart-svg {
+    .cart {
         display: none;
     }
+
 }
 
-@media all and (max-width: 999px) {
+@media all and (max-width: 700px) {
     .grid {
-        width: 600px;
+        width: 290px;
         margin: auto;
     }
 
@@ -400,4 +313,87 @@ Cart
 
 svg:hover {
     cursor: pointer;
+}
+
+
+
+
+
+
+
+header {
+    width: 100vw;
+    height: 50px;
+    line-height: 50px;
+    background: rgb(95, 95, 95);
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+header .nav {
+    display: flex;
+}
+
+header .nav .elem {
+    margin-left: 10px;
+}
+
+header .options {
+    display: flex;
+}
+
+header .options .elem {
+    margin-right: 10px;
+}
+
+
+
+
+.left-menu {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    color: white;
+
+    font-size: 7vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 2001;
+    display: none;
+}
+
+.left-menu ul {
+    padding-top: 10vh;
+    padding-left: 0;
+}
+
+.left-menu ul li {
+    list-style: none;
+    text-align: center;
+    transition: 0.3s ease-out;
+}
+
+.left-menu ul li:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+.left-menu button {
+    font-size: inherit;
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
 }
