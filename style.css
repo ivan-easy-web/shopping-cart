@@ -1,30 +1,18 @@
 body {
     background-color: rgb(241, 241, 241);
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
-@keyframes gradient {
-	0% { background-position: 0% 50%; }
-	50% { background-position: 100% 50%; }
-	100% { background-position: 0% 50%; }
-}
-
-.welcomePage {
-    width: 100vw;
-    height: 100vh;
-
-    background: linear-gradient(-45deg, #c0b3af, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-}
-
-.welcomePage .centeredBlock {
-    color: rgba(236, 236, 236, 0.904);
-    text-align: center;
+h5 {
+    font-size: 1.2rem;
+    margin: 15px 0;
 }
 
 .myButton {
     padding: 2px 10px;
-    background: -webkit-linear-gradient( rgb(111, 180, 247), rgb(27, 130, 251));
+    background: -webkit-linear-gradient( rgba(98, 135, 216, 0.699), rgb(98, 136, 216));
     color: white;
     border-radius: 10px;
     transition: ease-out 0.1s;
@@ -39,49 +27,143 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
+.myButton:active {
+    transform: scale(0.9);
+    transition: ease-in 5ms;
+}
+
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------------
+Start Page
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
+@keyframes gradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+.welcomePage {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(-45deg, #c0b3af, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.welcomePage .centeredBlock {
+    color: rgba(236, 236, 236, 0.904);
+    text-align: center;
+    background-color: rgba(121, 121, 121, 0.493);
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.welcomePage .centeredBlock h1 {
+    font-size: 4rem;
+    font-weight: lighter;
+    line-height: 0px;
+}
+
+.welcomePage .centeredBlock p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    width: 70vw;
+}
+
+.welcomePage .centeredBlock a {
+    color: inherit;
+}
+
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------------
+Menubar
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+
 .menubar {
     position: sticky;
     top: 5px;
-    height: 30px;
+    height: 20px;
     margin: 10px 20px;
     background-color: rgba(139, 138, 138, 0.466);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
     padding: 5px 10px;
     border-radius: 20px;
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-around;
+    z-index: 1000;
 }
 
 
 .menubar-search input {
-    height: 25px;
     background: none;
-    border: none;
-    border-bottom: 1px solid black;
     outline: none;
-    display: none;
+    border: none;
+    border-bottom: 1px black solid;
+    font-size: 1rem;
 }
 
+.submenubar {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
 
-.menubar-logo {
+.submenubar .section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.submenubar .button {
+    margin: 0 40px;
+    color: rgb(98, 136, 216);
+    line-height: 40px;
+    font-size: 1.1rem;
+}
+
+.submenubar .button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.home-button {
+    position: sticky;
+    top: 0;
+    margin: auto;
+    margin-bottom: 10px;
+    z-index: 1001;
     background: white;
     height: 40px;
     width: 40px;
     border-radius: 20px;
     border: 1px solid rgb(214, 214, 214);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.178);
-    align-self: center;
     text-align: center;
     line-height: 40px;
     transition: 0.2s ease-out;
 }
 
-.menubar-logo svg {
+.home-button svg {
     display: block;
     margin: 8px auto;
 }
-.menubar-logo:hover {
+.home-button:hover {
     transform: scale(1.2) rotate(360deg);
     transition: 0.2s ease-in;
     cursor: pointer;
@@ -92,33 +174,154 @@ body {
     
 }
 
-.menubar-home {
-    margin: 0;
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------------
+Shoppting Page
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.shoppingPage {
+    background: rgb(241, 241, 241);
 }
 
-.menubar-home:hover {
+.container {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+}
+
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------------
+Grid
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.grid {
+    width: 1220px;
+}
+
+@media all and (min-width: 1300px)  and (max-width: 1600px) {
+    .grid {
+        width: 910px;
+    }
+
+    .cart-svg {
+        display: none;
+    }
+}
+
+@media all and (min-width: 1000px) and (max-width: 1299px) {
+    .grid {
+        width: 600px;
+    }
+
+    .cart-svg {
+        display: none;
+    }
+}
+
+@media all and (max-width: 999px) {
+    .grid {
+        width: 600px;
+        margin: auto;
+    }
+
+    .cart {
+        display: none;
+    }
+}
+
+.grid-card {
+    margin-bottom: 20px !important;
+    padding: 20px;
+    width: 250px;
+    z-index: 0;
     background: white;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.116);
 }
 
-.card {
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
-.card:hover {
+.grid-card:hover {
     cursor: pointer;
 }
 
-.card-img-top {
-    border-radius: 10px 10px 0px 0px;
+.grid-card img {
+    width: inherit;
+    border-radius: 10px;
 }
 
+.modalBackground {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(15px) brightness(0.8);
+    backdrop-filter: blur(15px) brightness(0.8);
+    z-index: 2000;
+}
+
+.modalCard {
+    margin: 10vh auto;
+    width: 400px;
+    transition: 0.2ms ease-in;
+    z-index: 2001;
+}
+
+#BigSaleCard {
+    background: linear-gradient(-45deg, #ee5c87, #f1a4b5, #d587b3);
+	background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+    color: white;
+}
+
+#DiscountCard {
+    background: linear-gradient(-45deg, #ffffff, #5e5e5e, #050505);
+	background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: white;
+}
+
+#WinterCollectionCard {
+    background: linear-gradient(-45deg, #ffffff, #b8b8b8);
+	background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+    color: black;
+}
+
+.oldprice {
+    text-decoration-line: line-through;
+}
+
+.discount {
+    font-size: 1.2em;
+    color: rgb(255, 149, 50);
+}
+
+/*
+------------------------------------------------------------------------------------------------------------------------------------------------
+Cart
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
 .cart {
+    margin-left: 20px;
+    padding-left: 20px;
+    height: fit-content;
     position: sticky;
     top: 50px;
     border-left: 1px inset;
-    padding: 10px 20px;
-    padding-right: 0;
+    justify-self: end;
+}
+
+.cart-container {
+    
 }
 
 .cartElement {
@@ -132,12 +335,16 @@ body {
     justify-content: space-between;
 }
 
+.cartElement div {
+    margin: 0 12px
+}
+
 .positionName {
 
 }
 
 .positionSize {
-    color: rgb(20, 93, 252);
+    color: rgb(98, 136, 216);
 }
 
 .positionNumber {
@@ -152,4 +359,45 @@ body {
     cursor: pointer;
     text-decoration: underline;
 
+}
+
+.cart-total {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    color: rgb(102, 102, 102);
+    font-weight: lighter;
+}
+
+.cart-total div {
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.cart-total span {
+    color: green;
+    font-weight: bolder;
+}
+
+.save-label {
+    margin-left: auto;
+}
+
+.buy-button {
+    margin-left: 15px;
+    color: rgb(98, 136, 216);
+    font-weight: bolder;
+}
+
+.buy-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.cart-svg {
+    margin-right: 20px;
+}
+
+svg:hover {
+    cursor: pointer;
 }
