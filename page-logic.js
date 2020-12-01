@@ -15,10 +15,17 @@ $('body').on('click', '.modalBackground', function(event) {
     $(this).removeClass('modalBackground').children().removeClass('modalCard');
 })
 
-if (window.orientation !== undefined) {
-    $('.grid').css('width','290px');
-}
-
 $('select').click(function(event) {
     event.stopPropagation();
 })
+
+$("#lcloseBtn").toggle("slide", { direction: "right" }, 1000);
+
+$('#closeBtn').click(function() {
+    $( "#menu" ).css('display','none')
+})
+
+$('#menuBtn').click(function() {
+    $( "#menu" ).css('display','block');
+})
+
