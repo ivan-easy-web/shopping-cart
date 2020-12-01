@@ -17,4 +17,8 @@ $('body').on('click', '.modalBackground', function(event) {
 
 if (window.orientation !== undefined) {
     $('.grid').css('width','290px');
-  }
+}
+
+$('select').click(function(event) {
+    event.stopPropagation();
+})
