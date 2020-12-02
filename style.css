@@ -149,6 +149,16 @@ Grid
     }
 }
 
+@media all and (max-width: 986px) {
+    .positionSize {
+        display: none;
+    }
+    
+    .positionNumber {
+        display: none;
+    }
+}
+
 .grid-card {
     margin-bottom: 20px !important;
     padding: 20px;
